@@ -6,9 +6,9 @@
     <meta name="theme-color" content="#111c25">
     <meta name="description" content="Каталог українських локалізацій ігор від UKA Localization: стан перекладів і посилання на проєкти.">
     <title>Українські локалізації ігор — UKA Localization</title>
-    <link rel="stylesheet" href="styles.css?v=20260927-2">
-    <script src="search.js?v=20260927-2" defer></script>
-    <script src="preview.js?v=20260927-2" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260927-3">
+    <script src="search.js?v=20260927-3" defer></script>
+    <script src="preview.js?v=20260927-3" defer></script>
   </head>
   <body>
     <div class="page">
@@ -17,7 +17,10 @@
           <span class="brand-mark" aria-hidden="true">У</span>
           <span>UKA <strong>Localization</strong></span>
         </a>
-        <a class="header-link" href="https://github.com/UKA-Localization">Наші проєкти <span aria-hidden="true">↗</span></a>
+        <nav class="header-nav" aria-label="Основна навігація">
+          <a href="#catalog-title">Переклади</a>
+          <a href="#support">Підтримати</a>
+        </nav>
       </header>
 
       <main id="top">
@@ -30,7 +33,7 @@
         <section class="catalog" aria-labelledby="catalog-title">
           <div class="section-heading">
             <h2 id="catalog-title">Переклади</h2>
-            <span class="count" id="result-count" aria-live="polite">2 проєкти</span>
+            <span class="count" id="result-count" aria-live="polite">2 проєкти · 2 тестові</span>
           </div>
 
           <div class="search-field">
@@ -69,13 +72,44 @@
                 </div>
               </div>
             </article>
+            <!-- Тимчасові записи для перевірки пагінації; видалити після перегляду. -->
+            <article class="project-row demo-row" data-name="Тестова гра А" data-demo="true">
+              <div class="project-demo-image" aria-hidden="true">ТЕСТ А</div>
+              <div class="project-content">
+                <h3>Тестова гра А</h3>
+                <p>Демонстраційний запис для перевірки сторінок каталогу. Це не справжній проєкт локалізації.</p>
+                <div class="project-meta"><span class="platform">Демонстрація</span><span class="status">Тестовий запис</span></div>
+                <div class="project-stats"><span>Без статистики перекладу</span></div>
+                <div class="project-actions"><span class="demo-action">Без посилань</span></div>
+              </div>
+            </article>
+            <article class="project-row demo-row" data-name="Тестова гра Б" data-demo="true">
+              <div class="project-demo-image" aria-hidden="true">ТЕСТ Б</div>
+              <div class="project-content">
+                <h3>Тестова гра Б</h3>
+                <p>Ще один демонстраційний запис, щоб можна було перемикнути сторінку й перевірити пошук.</p>
+                <div class="project-meta"><span class="platform">Демонстрація</span><span class="status">Тестовий запис</span></div>
+                <div class="project-stats"><span>Без статистики перекладу</span></div>
+                <div class="project-actions"><span class="demo-action">Без посилань</span></div>
+              </div>
+            </article>
           </div>
           <p class="empty-state" id="empty-state" hidden>За такою назвою перекладів не знайдено.</p>
           <nav class="pagination" id="pagination" aria-label="Сторінки перекладів">
             <button id="previous-page" type="button" disabled>← Попередня</button>
-            <span id="page-indicator" aria-live="polite">Сторінка 1 із 1</span>
+            <span id="page-indicator" aria-live="polite">Сторінка 1 із 2</span>
             <button id="next-page" type="button" disabled>Наступна →</button>
           </nav>
+        </section>
+
+        <section class="support-section" id="support" aria-labelledby="support-title">
+          <h2 id="support-title">Підтримати проєкт</h2>
+          <p>Посилання для підтримки з’являться тут після налаштування цих майданчиків.</p>
+          <div class="support-actions">
+            <button type="button" disabled><span>Patreon</span><small>Незабаром</small></button>
+            <button type="button" disabled><span>Монобанка</span><small>Незабаром</small></button>
+            <button type="button" disabled><span>Donatello</span><small>Незабаром</small></button>
+          </div>
         </section>
 
         <section class="social-section" aria-labelledby="social-title">

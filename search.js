@@ -1,7 +1,8 @@
-const PAGE_SIZE = 4;
+const PAGE_SIZE = 2;
 const searchInput = document.querySelector('#project-search');
 const projectList = document.querySelector('#project-rows');
 const rows = [...projectList.querySelectorAll('.project-row')];
+const demoCount = rows.filter(row => row.dataset.demo === 'true').length;
 const resultCount = document.querySelector('#result-count');
 const emptyState = document.querySelector('#empty-state');
 const pagination = document.querySelector('#pagination');
@@ -30,8 +31,10 @@ function renderProjects() {
   emptyState.hidden = matching.length !== 0;
   pagination.hidden = matching.length === 0;
   resultCount.textContent = query
-    ? `${matching.length} із ${rows.length} ${projectWord(rows.length)}`
-    : `${rows.length} ${projectWord(rows.length)}`;
+    ? `${matching.length} із ${rows.length} записів`
+    : demoCount
+      ? `${rows.length - demoCount} ${projectWord(rows.length - demoCount)} · ${demoCount} тестові`
+      : `${rows.length} ${projectWord(rows.length)}`;
   pageIndicator.textContent = `Сторінка ${currentPage} із ${totalPages}`;
   previousPage.disabled = currentPage === 1;
   nextPage.disabled = currentPage === totalPages;
