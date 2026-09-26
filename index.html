@@ -37,31 +37,25 @@
             <input id="project-search" type="search" placeholder="Наприклад, Barony" autocomplete="off">
           </div>
 
-          <div class="table-scroll" role="region" aria-label="Таблиця перекладів" tabindex="0">
-            <table>
-              <thead>
-                <tr>
-                  <th scope="col">Гра</th>
-                  <th scope="col">Платформа</th>
-                  <th scope="col">Стан</th>
-                  <th scope="col">Де знайти</th>
-                </tr>
-              </thead>
-              <tbody id="project-rows">
-                <tr data-name="Barony">
-                  <th scope="row"><span class="game-title">Barony</span><span class="game-detail">Локалізація у форматі мода</span></th>
-                  <td>ПК · Steam</td>
-                  <td><span class="status">Чернетка</span></td>
-                  <td><a class="project-link" href="https://github.com/UKA-Localization/Barony-localization-uk-UA">Репозиторій <span aria-hidden="true">↗</span></a></td>
-                </tr>
-                <tr data-name="Starship Troopers: Terran Command">
-                  <th scope="row"><span class="game-title">Starship Troopers:<br>Terran Command</span><span class="game-detail">Додаткова мова для гри</span></th>
-                  <td>ПК · Steam</td>
-                  <td><span class="status">Чернетка</span></td>
-                  <td><a class="project-link" href="https://github.com/UKA-Localization/Starship-Troopers-Terran-Command-localization-uk-UA">Репозиторій <span aria-hidden="true">↗</span></a></td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="project-list" id="project-rows">
+            <article class="project-row" data-name="Barony">
+              <img class="project-image" src="assets/barony.jpg" alt="Головне меню Barony з українським інтерфейсом" loading="lazy" width="3440" height="1440">
+              <div class="project-content">
+                <h3>Barony</h3>
+                <p>Фентезійна гра про дослідження підземель. Українська локалізація встановлюється як мод.</p>
+                <div class="project-meta"><span class="platform">ПК · Steam</span><span class="status">Чернетка перекладу</span></div>
+                <a class="project-link" href="https://github.com/UKA-Localization/Barony-localization-uk-UA">Переглянути переклад <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+            <article class="project-row" data-name="Starship Troopers: Terran Command">
+              <img class="project-image" src="assets/starship-troopers.jpg" alt="Головне меню Starship Troopers: Terran Command з українським інтерфейсом" loading="lazy" width="3440" height="1440">
+              <div class="project-content">
+                <h3>Starship Troopers: Terran Command</h3>
+                <p>Стратегія за мотивами «Зоряного десанту». Локалізація додає українську до списку мов гри.</p>
+                <div class="project-meta"><span class="platform">ПК · Steam</span><span class="status">Чернетка перекладу</span></div>
+                <a class="project-link" href="https://github.com/UKA-Localization/Starship-Troopers-Terran-Command-localization-uk-UA">Переглянути переклад <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
           </div>
           <p class="empty-state" id="empty-state" hidden>За такою назвою перекладів не знайдено.</p>
           <p class="catalog-note">Обидва переклади ще проходять підготовку. Готові файли для встановлення з’являться на сторінках проєктів після першого релізу.</p>

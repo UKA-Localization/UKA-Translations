@@ -1,5 +1,5 @@
 const searchInput = document.querySelector('#project-search');
-const rows = [...document.querySelectorAll('#project-rows tr')];
+const rows = [...document.querySelectorAll('#project-rows .project-row')];
 const resultCount = document.querySelector('#result-count');
 const emptyState = document.querySelector('#empty-state');
 
