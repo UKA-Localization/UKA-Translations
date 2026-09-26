@@ -3,6 +3,16 @@ const searchInput = document.querySelector('#project-search');
 const sortSelect = document.querySelector('#project-sort');
 const projectList = document.querySelector('#project-rows');
 const rows = [...projectList.querySelectorAll('.project-row')];
+const normalizeSearch = value => value.normalize('NFKC').toLocaleLowerCase('uk');
+const searchText = new Map(rows.map(row => {
+  const platform = row.querySelector('.platform')?.textContent ?? '';
+  return [row, normalizeSearch([
+    row.dataset.name,
+    row.querySelector('.project-genres')?.textContent ?? '',
+    platform,
+    platform.includes('ПК') ? 'PC' : '',
+  ].join(' '))];
+}));
 const originalOrder = new Map(rows.map((row, index) => [row, index]));
 const demoCount = rows.filter(row => row.dataset.demo === 'true').length;
 const resultCount = document.querySelector('#result-count');
@@ -50,10 +60,11 @@ function compareProjects(a, b) {
 }
 
 function renderProjects() {
-  const query = searchInput.value.trim().toLocaleLowerCase('uk');
+  const query = normalizeSearch(searchInput.value.trim());
+  const terms = query.split(/\s+/).filter(Boolean);
   const sortedRows = [...rows].sort(compareProjects);
   projectList.replaceChildren(...sortedRows);
-  const matching = sortedRows.filter(row => row.dataset.name.toLocaleLowerCase('uk').includes(query));
+  const matching = sortedRows.filter(row => terms.every(term => searchText.get(row).includes(term)));
   const totalPages = Math.max(1, Math.ceil(matching.length / PAGE_SIZE));
   currentPage = Math.min(currentPage, totalPages);
   const first = (currentPage - 1) * PAGE_SIZE;
