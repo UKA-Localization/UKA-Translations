@@ -8,6 +8,7 @@
     <title>Українські локалізації ігор — UKA Localization</title>
     <link rel="stylesheet" href="styles.css">
     <script src="search.js" defer></script>
+    <script src="preview.js" defer></script>
   </head>
   <body>
     <div class="page">
@@ -39,7 +40,7 @@
 
           <div class="project-list" id="project-rows">
             <article class="project-row" data-name="Barony">
-              <a class="project-image-link" href="assets/barony.jpg" target="_blank" rel="noopener" aria-label="Відкрити скріншот Barony у повному розмірі">
+              <a class="project-image-link" href="assets/barony.jpg" aria-label="Збільшити скріншот Barony">
                 <img class="project-image" src="assets/barony.jpg" alt="Головне меню Barony з українським інтерфейсом" loading="lazy" width="3440" height="1440">
               </a>
               <div class="project-content">
@@ -50,7 +51,7 @@
               </div>
             </article>
             <article class="project-row" data-name="Starship Troopers: Terran Command">
-              <a class="project-image-link" href="assets/starship-troopers.jpg" target="_blank" rel="noopener" aria-label="Відкрити скріншот Starship Troopers: Terran Command у повному розмірі">
+              <a class="project-image-link" href="assets/starship-troopers.jpg" aria-label="Збільшити скріншот Starship Troopers: Terran Command">
                 <img class="project-image" src="assets/starship-troopers.jpg" alt="Головне меню Starship Troopers: Terran Command з українським інтерфейсом" loading="lazy" width="3440" height="1440">
               </a>
               <div class="project-content">
@@ -65,6 +66,19 @@
           <p class="catalog-note">Обидва переклади ще проходять підготовку. Готові файли для встановлення з’являться на сторінках проєктів після першого релізу.</p>
         </section>
       </main>
+
+      <dialog class="image-preview" id="image-preview" aria-labelledby="preview-title">
+        <div class="preview-panel">
+          <div class="preview-header">
+            <span id="preview-title"></span>
+            <div class="preview-actions">
+              <button class="preview-zoom" type="button" aria-pressed="false">Збільшити</button>
+              <button class="preview-close" type="button" aria-label="Закрити скріншот">Закрити ×</button>
+            </div>
+          </div>
+          <div class="preview-viewport"><img id="preview-image" alt=""></div>
+        </div>
+      </dialog>
 
       <footer class="site-footer">
         <span>UKA Localization</span>
