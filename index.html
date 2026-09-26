@@ -7,6 +7,7 @@
     <meta name="description" content="Каталог українських локалізацій ігор від UKA Localization: стан перекладів і посилання на проєкти.">
     <title>Українські локалізації ігор — UKA Localization</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="search.js" defer></script>
   </head>
   <body>
     <div class="page">
@@ -28,37 +29,41 @@
         <section class="catalog" aria-labelledby="catalog-title">
           <div class="section-heading">
             <h2 id="catalog-title">Переклади</h2>
-            <span class="count">2 проєкти</span>
+            <span class="count" id="result-count" aria-live="polite">2 проєкти</span>
           </div>
 
-          <div class="project-list">
-            <article class="project">
-              <div class="project-index" aria-hidden="true">01</div>
-              <div class="project-content">
-                <div class="project-topline">
-                  <span class="platform">ПК · Steam</span>
-                  <span class="status">Чернетка перекладу</span>
-                </div>
-                <h3>Barony</h3>
-                <p>Неофіційна українська локалізація гри. Переклад готується як мод; у репозиторії є поточний стан роботи та інструкція зі встановлення.</p>
-                <a class="project-link" href="https://github.com/UKA-Localization/Barony-localization-uk-UA">Сторінка перекладу <span aria-hidden="true">↗</span></a>
-              </div>
-            </article>
-
-            <article class="project">
-              <div class="project-index" aria-hidden="true">02</div>
-              <div class="project-content">
-                <div class="project-topline">
-                  <span class="platform">ПК · Steam</span>
-                  <span class="status">Чернетка перекладу</span>
-                </div>
-                <h3>Starship Troopers:<br>Terran Command</h3>
-                <p>Неофіційна українська локалізація гри. Переклад додає українську до списку мов; у репозиторії є поточний стан роботи та інструкція зі встановлення.</p>
-                <a class="project-link" href="https://github.com/UKA-Localization/Starship-Troopers-Terran-Command-localization-uk-UA">Сторінка перекладу <span aria-hidden="true">↗</span></a>
-              </div>
-            </article>
+          <div class="search-field">
+            <label for="project-search">Пошук за назвою гри</label>
+            <input id="project-search" type="search" placeholder="Наприклад, Barony" autocomplete="off">
           </div>
 
+          <div class="table-scroll" role="region" aria-label="Таблиця перекладів" tabindex="0">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Гра</th>
+                  <th scope="col">Платформа</th>
+                  <th scope="col">Стан</th>
+                  <th scope="col">Де знайти</th>
+                </tr>
+              </thead>
+              <tbody id="project-rows">
+                <tr data-name="Barony">
+                  <th scope="row"><span class="game-title">Barony</span><span class="game-detail">Локалізація у форматі мода</span></th>
+                  <td>ПК · Steam</td>
+                  <td><span class="status">Чернетка</span></td>
+                  <td><a class="project-link" href="https://github.com/UKA-Localization/Barony-localization-uk-UA">Репозиторій <span aria-hidden="true">↗</span></a></td>
+                </tr>
+                <tr data-name="Starship Troopers: Terran Command">
+                  <th scope="row"><span class="game-title">Starship Troopers:<br>Terran Command</span><span class="game-detail">Додаткова мова для гри</span></th>
+                  <td>ПК · Steam</td>
+                  <td><span class="status">Чернетка</span></td>
+                  <td><a class="project-link" href="https://github.com/UKA-Localization/Starship-Troopers-Terran-Command-localization-uk-UA">Репозиторій <span aria-hidden="true">↗</span></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="empty-state" id="empty-state" hidden>За такою назвою перекладів не знайдено.</p>
           <p class="catalog-note">Обидва переклади ще проходять підготовку. Готові файли для встановлення з’являться на сторінках проєктів після першого релізу.</p>
         </section>
       </main>
