@@ -21,7 +21,7 @@ a:focus-visible, input:focus-visible { outline: 2px solid #f4bf65; outline-offse
 .brand strong { font-weight: 700; }
 .brand-mark { display: grid; place-items: center; width: 35px; height: 35px; background: #f4bf65; color: #111c25; font-weight: 800; font-size: 22px; border-radius: 7px; }
 .header-link { color: #b6c6ca; font-size: 14px; text-decoration: none; }
-.header-link:hover, .project-link:hover { color: #ffcf7d; }
+.header-link:hover { color: #ffcf7d; }
 
 .intro { padding: 45px 0 43px; max-width: 840px; }
 .eyebrow { margin: 0 0 12px; color: #f4bf65; font-size: 12px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
@@ -29,7 +29,7 @@ h1 { margin: 0; font-size: clamp(34px, 4.6vw, 54px); line-height: 1.1; letter-sp
 h1 span { color: #aebfc3; }
 .intro-copy { max-width: 690px; margin: 18px 0 0; color: #b6c6ca; font-size: 16px; line-height: 1.6; }
 
-.catalog { padding-bottom: 75px; }
+.catalog { padding-bottom: 55px; }
 .section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid #42525a; padding-bottom: 14px; }
 h2 { margin: 0; font-size: 25px; letter-spacing: -.03em; }
 .count { color: #aebfc3; font-size: 14px; white-space: nowrap; }
@@ -56,21 +56,40 @@ h2 { margin: 0; font-size: 25px; letter-spacing: -.03em; }
 .preview-viewport { max-height: calc(94vh - 80px); overflow: auto; border-radius: 5px; background: #05090c; }
 #preview-image { display: block; width: auto; height: auto; max-width: 100%; max-height: calc(94vh - 80px); margin: auto; cursor: zoom-in; }
 .is-zoomed #preview-image { width: max(1200px, 150%); max-width: none; max-height: none; margin: 0; cursor: zoom-out; }
-.project-content { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto auto; column-gap: 18px; min-width: 0; }
+.project-content { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto auto auto; column-gap: 18px; min-width: 0; }
 h3 { min-width: 0; margin: 0; font-size: clamp(19px, 2vw, 23px); line-height: 1.25; letter-spacing: -.025em; }
-.project-link { grid-column: 2; grid-row: 1 / 4; align-self: center; color: #f4bf65; font-weight: 650; font-size: 14px; text-decoration-thickness: 1px; text-underline-offset: 5px; white-space: nowrap; }
 .project-content p { margin: 10px 0 16px; max-width: 600px; color: #b6c6ca; font-size: 14px; line-height: 1.5; }
 .project-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .platform { color: #aebfc3; font-size: 13px; }
 .status { display: inline-block; border: 1px solid #896d45; border-radius: 100px; padding: 6px 9px; color: #f4bf65; font-size: 12px; line-height: 1; }
+.project-stats { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 14px; color: #aebfc3; font-size: 12px; }
+.project-stats strong { color: #edf3f4; font-size: 15px; }
+.project-actions { grid-column: 2; grid-row: 1 / 5; align-self: center; display: flex; flex-direction: column; gap: 8px; min-width: 150px; }
+.project-actions a { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-height: 38px; padding: 8px 12px; border-radius: 7px; font-size: 13px; font-weight: 700; text-align: center; text-decoration: none; white-space: nowrap; }
+.project-link { background: #f4bf65; color: #111c25; }
+.project-link:hover { background: #ffcf7d; }
+.game-link { border: 1px solid #647983; color: #dbe6e8; }
+.game-link:hover { border-color: #f4bf65; color: #f4bf65; }
 .empty-state { margin: 0; padding: 23px; color: #b6c6ca; background: #1c2a34; border: 1px solid #344650; border-radius: 12px; }
-.catalog-note { max-width: 750px; margin: 22px 0 0; color: #9eb1b7; font-size: 14px; line-height: 1.6; }
+.pagination { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 24px; }
+.pagination button { min-height: 38px; border: 1px solid #52646c; border-radius: 7px; padding: 8px 12px; background: #263640; color: #edf3f4; font: inherit; font-size: 13px; cursor: pointer; }
+.pagination button:hover:not(:disabled) { border-color: #f4bf65; }
+.pagination button:disabled { opacity: .45; cursor: default; }
+.pagination button:focus-visible { outline: 2px solid #f4bf65; outline-offset: 3px; }
+#page-indicator { color: #aebfc3; font-size: 13px; white-space: nowrap; }
+.social-section { border-top: 1px solid #30404a; padding: 34px 0 57px; }
+.social-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 19px; }
+.social-link { display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 8px 13px; border: 1px solid #52646c; border-radius: 9px; background: #1c2a34; color: #edf3f4; font: inherit; font-size: 14px; font-weight: 650; text-decoration: none; }
+a.social-link:hover { border-color: #f4bf65; }
+.social-link:disabled { opacity: .55; cursor: default; }
+.social-link small { color: #aebfc3; font-size: 12px; font-weight: 400; }
+.social-mark { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 6px; background: #344b58; color: #f4bf65; font-size: 11px; font-weight: 800; }
 .site-footer { gap: 20px; border-top: 1px solid #30404a; padding: 27px 0 38px; color: #819ba3; font-size: 13px; }
 
 @media (max-width: 1050px) {
   .project-row { grid-template-columns: 310px minmax(0, 1fr); }
   .project-content { grid-template-columns: minmax(0, 1fr); }
-  .project-link { grid-column: 1; grid-row: 4; justify-self: start; margin-top: 15px; }
+  .project-actions { grid-column: 1; grid-row: 5; flex-direction: row; flex-wrap: wrap; margin-top: 15px; }
 }
 
 @media (max-width: 800px) {
@@ -82,9 +101,8 @@ h3 { min-width: 0; margin: 0; font-size: clamp(19px, 2vw, 23px); line-height: 1.
   .site-header { min-height: 72px; }
   .intro { padding: 37px 0 35px; }
   .intro-copy { font-size: 15px; }
-  .catalog { padding-bottom: 55px; }
+  .catalog { padding-bottom: 44px; }
   .project-row { grid-template-columns: minmax(0, 1fr); gap: 15px; padding: 14px; }
-  .project-link { white-space: normal; }
   .project-content p { margin: 11px 0 13px; }
 }
 
@@ -92,5 +110,7 @@ h3 { min-width: 0; margin: 0; font-size: clamp(19px, 2vw, 23px); line-height: 1.
   .brand { gap: 8px; font-size: 13px; }
   .brand-mark { width: 30px; height: 30px; font-size: 19px; }
   .header-link { font-size: 12px; max-width: 80px; line-height: 1.25; text-align: right; }
+  .pagination { flex-wrap: wrap; gap: 9px; }
+  #page-indicator { order: -1; width: 100%; text-align: center; }
   .site-footer { align-items: flex-start; flex-direction: column; gap: 5px; }
 }
