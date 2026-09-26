@@ -6,8 +6,8 @@
     <meta name="theme-color" content="#111c25">
     <meta name="description" content="Каталог українських локалізацій ігор від UKA Localization: стан перекладів і посилання на проєкти.">
     <title>Українські локалізації ігор — UKA Localization</title>
-    <link rel="stylesheet" href="styles.css?v=20260927-4">
-    <script src="search.js?v=20260927-3" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20260927-5">
+    <script src="search.js?v=20260927-5" defer></script>
     <script src="preview.js?v=20260927-3" defer></script>
   </head>
   <body>
@@ -52,24 +52,36 @@
         <section class="catalog" aria-labelledby="catalog-title">
           <div class="section-heading">
             <h2 id="catalog-title">Переклади</h2>
-            <span class="count" id="result-count" aria-live="polite">2 проєкти · 2 тестові</span>
+            <span class="count" id="result-count" aria-live="polite">2 проєкти · 4 тестові</span>
           </div>
 
-          <div class="search-field">
-            <label class="visually-hidden" for="project-search">Пошук за назвою гри</label>
-            <span class="search-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.4 4.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-            <input id="project-search" type="search" placeholder="Знайти гру за назвою" autocomplete="off">
+          <div class="catalog-controls">
+            <div class="search-field">
+              <label class="visually-hidden" for="project-search">Пошук за назвою гри</label>
+              <span class="search-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.4 4.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+              <input id="project-search" type="search" placeholder="Знайти гру за назвою" autocomplete="off">
+            </div>
+            <div class="sort-field">
+              <label for="project-sort">Сортувати</label>
+              <select id="project-sort">
+                <option value="added">За датою додавання</option>
+                <option value="updated">За датою оновлення</option>
+                <option value="name">За назвою</option>
+                <option value="status">За статусом</option>
+              </select>
+            </div>
           </div>
 
           <div class="project-list" id="project-rows">
-            <article class="project-row" data-name="Barony">
+            <article class="project-row" data-name="Barony" data-added="2026-09-27T00:23:01+03:00" data-updated="2026-09-22T20:30:16Z" data-status="draft">
               <a class="project-image-link" href="assets/barony.jpg" aria-label="Збільшити скріншот Barony">
                 <img class="project-image" src="assets/barony.jpg" alt="Головне меню Barony з українським інтерфейсом" loading="lazy" width="3440" height="1440">
               </a>
               <div class="project-content">
                 <h3>Barony</h3>
                 <p>Фентезійна гра про дослідження підземель. Українська локалізація встановлюється як мод.</p>
-                <div class="project-meta"><span class="platform">ПК · Steam</span><span class="status">Чернетка перекладу</span></div>
+                <div class="project-genres"><span>Жанри:</span> рольова гра · roguelike · дослідження підземель</div>
+                <div class="project-meta"><span class="platform">ПК · Steam</span><span class="status">Чернетка перекладу</span><time datetime="2026-09-22">Оновлено 22.09.2026</time></div>
                 <div class="project-stats" aria-label="Статистика перекладу"><span><strong>17 678</strong> рядків</span><span><strong>0%</strong> вичитано</span></div>
                 <div class="project-actions">
                   <a class="project-link" href="https://github.com/UKA-Localization/Barony-localization-uk-UA"><img class="action-icon" src="assets/icons/github-dark.svg" alt="">Переклад <span aria-hidden="true">↗</span></a>
@@ -77,14 +89,15 @@
                 </div>
               </div>
             </article>
-            <article class="project-row" data-name="Starship Troopers: Terran Command">
+            <article class="project-row" data-name="Starship Troopers: Terran Command" data-added="2026-09-27T00:23:01+03:00" data-updated="2026-09-24T14:46:28Z" data-status="draft">
               <a class="project-image-link" href="assets/starship-troopers.jpg" aria-label="Збільшити скріншот Starship Troopers: Terran Command">
                 <img class="project-image" src="assets/starship-troopers.jpg" alt="Головне меню Starship Troopers: Terran Command з українським інтерфейсом" loading="lazy" width="3440" height="1440">
               </a>
               <div class="project-content">
                 <h3>Starship Troopers: Terran Command</h3>
                 <p>Стратегія за мотивами «Зоряного десанту». Локалізація додає українську до списку мов гри.</p>
-                <div class="project-meta"><span class="platform">ПК · Steam</span><span class="status">Чернетка перекладу</span></div>
+                <div class="project-genres"><span>Жанри:</span> стратегія в реальному часі · тактика</div>
+                <div class="project-meta"><span class="platform">ПК · Steam</span><span class="status">Чернетка перекладу</span><time datetime="2026-09-24">Оновлено 24.09.2026</time></div>
                 <div class="project-stats" aria-label="Статистика перекладу"><span><strong>7 165</strong> рядків</span><span><strong>0%</strong> вичитано</span></div>
                 <div class="project-actions">
                   <a class="project-link" href="https://github.com/UKA-Localization/Starship-Troopers-Terran-Command-localization-uk-UA"><img class="action-icon" src="assets/icons/github-dark.svg" alt="">Переклад <span aria-hidden="true">↗</span></a>
@@ -93,7 +106,7 @@
               </div>
             </article>
             <!-- Тимчасові записи для перевірки пагінації; видалити після перегляду. -->
-            <article class="project-row demo-row" data-name="Тестова гра А" data-demo="true">
+            <article class="project-row demo-row" data-name="Тестова гра А" data-demo="true" data-added="2026-09-27" data-updated="2026-09-27" data-status="demo">
               <div class="project-demo-image" aria-hidden="true">ТЕСТ А</div>
               <div class="project-content">
                 <h3>Тестова гра А</h3>
@@ -103,11 +116,31 @@
                 <div class="project-actions"><span class="demo-action">Без посилань</span></div>
               </div>
             </article>
-            <article class="project-row demo-row" data-name="Тестова гра Б" data-demo="true">
+            <article class="project-row demo-row" data-name="Тестова гра Б" data-demo="true" data-added="2026-09-27" data-updated="2026-09-27" data-status="demo">
               <div class="project-demo-image" aria-hidden="true">ТЕСТ Б</div>
               <div class="project-content">
                 <h3>Тестова гра Б</h3>
                 <p>Ще один демонстраційний запис, щоб можна було перемикнути сторінку й перевірити пошук.</p>
+                <div class="project-meta"><span class="platform">Демонстрація</span><span class="status">Тестовий запис</span></div>
+                <div class="project-stats"><span>Без статистики перекладу</span></div>
+                <div class="project-actions"><span class="demo-action">Без посилань</span></div>
+              </div>
+            </article>
+            <article class="project-row demo-row" data-name="Тестова гра В" data-demo="true" data-added="2026-09-27" data-updated="2026-09-27" data-status="demo">
+              <div class="project-demo-image" aria-hidden="true">ТЕСТ В</div>
+              <div class="project-content">
+                <h3>Тестова гра В</h3>
+                <p>Демонстраційний запис для перевірки сортування та пагінації. Це не справжній проєкт локалізації.</p>
+                <div class="project-meta"><span class="platform">Демонстрація</span><span class="status">Тестовий запис</span></div>
+                <div class="project-stats"><span>Без статистики перекладу</span></div>
+                <div class="project-actions"><span class="demo-action">Без посилань</span></div>
+              </div>
+            </article>
+            <article class="project-row demo-row" data-name="Тестова гра Г" data-demo="true" data-added="2026-09-27" data-updated="2026-09-27" data-status="demo">
+              <div class="project-demo-image" aria-hidden="true">ТЕСТ Г</div>
+              <div class="project-content">
+                <h3>Тестова гра Г</h3>
+                <p>Ще один демонстраційний запис для перевірки другої сторінки каталогу.</p>
                 <div class="project-meta"><span class="platform">Демонстрація</span><span class="status">Тестовий запис</span></div>
                 <div class="project-stats"><span>Без статистики перекладу</span></div>
                 <div class="project-actions"><span class="demo-action">Без посилань</span></div>
