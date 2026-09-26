@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#111c25">
     <meta name="description" content="Каталог українських локалізацій ігор від UKA Localization: стан перекладів і посилання на проєкти.">
     <title>Українські локалізації ігор — UKA Localization</title>
-    <link rel="stylesheet" href="styles.css?v=20260927-3">
+    <link rel="stylesheet" href="styles.css?v=20260927-4">
     <script src="search.js?v=20260927-3" defer></script>
     <script src="preview.js?v=20260927-3" defer></script>
   </head>
@@ -18,8 +18,9 @@
           <span>UKA <strong>Localization</strong></span>
         </a>
         <nav class="header-nav" aria-label="Основна навігація">
-          <a href="#catalog-title">Переклади</a>
           <a href="#support">Підтримати</a>
+          <a href="#catalog-title">Переклади</a>
+          <a href="#join">Приєднатись</a>
         </nav>
       </header>
 
@@ -30,6 +31,24 @@
           <p class="intro-copy">Тут зібрані публічні українські локалізації UKA Localization. Відкрийте сторінку гри, щоб дізнатися про стан перекладу та спосіб встановлення.</p>
         </section>
 
+        <section class="social-section" aria-labelledby="social-title">
+          <h2 id="social-title">Ми у мережах</h2>
+          <div class="social-actions">
+            <a class="social-link" href="https://github.com/UKA-Localization"><span class="service-icon" aria-hidden="true"><img src="assets/icons/github-light.svg" alt=""></span><span>GitHub</span><span aria-hidden="true">↗</span></a>
+            <button class="social-link" type="button" disabled aria-label="Discord — посилання з’явиться згодом"><span class="service-icon discord-icon" aria-hidden="true"><img src="assets/icons/discord.svg" alt=""></span><span>Discord</span><small>Незабаром</small></button>
+          </div>
+        </section>
+
+        <section class="support-section" id="support" aria-labelledby="support-title">
+          <h2 id="support-title">Підтримати проєкт</h2>
+          <p>Посилання для підтримки з’являться тут після налаштування цих майданчиків.</p>
+          <div class="support-actions">
+            <button type="button" disabled><span class="support-name"><span class="service-icon" aria-hidden="true"><img src="assets/icons/patreon.png" alt=""></span>Patreon</span><small>Незабаром</small></button>
+            <button type="button" disabled><span class="support-name"><span class="service-icon" aria-hidden="true"><img src="assets/icons/monobank.png" alt=""></span>Монобанка</span><small>Незабаром</small></button>
+            <button type="button" disabled><span class="support-name"><span class="service-icon donatello-icon" aria-hidden="true"><img src="assets/icons/donatello.svg" alt=""></span>Donatello</span><small>Незабаром</small></button>
+          </div>
+        </section>
+
         <section class="catalog" aria-labelledby="catalog-title">
           <div class="section-heading">
             <h2 id="catalog-title">Переклади</h2>
@@ -37,8 +56,9 @@
           </div>
 
           <div class="search-field">
-            <label for="project-search">Пошук за назвою гри</label>
-            <input id="project-search" type="search" placeholder="Наприклад, Barony" autocomplete="off">
+            <label class="visually-hidden" for="project-search">Пошук за назвою гри</label>
+            <span class="search-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.4 4.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <input id="project-search" type="search" placeholder="Знайти гру за назвою" autocomplete="off">
           </div>
 
           <div class="project-list" id="project-rows">
@@ -52,8 +72,8 @@
                 <div class="project-meta"><span class="platform">ПК · Steam</span><span class="status">Чернетка перекладу</span></div>
                 <div class="project-stats" aria-label="Статистика перекладу"><span><strong>17 678</strong> рядків</span><span><strong>0%</strong> вичитано</span></div>
                 <div class="project-actions">
-                  <a class="project-link" href="https://github.com/UKA-Localization/Barony-localization-uk-UA">Переклад <span aria-hidden="true">↗</span></a>
-                  <a class="game-link" href="https://store.steampowered.com/app/371970/Barony/">Гра у Steam <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/UKA-Localization/Barony-localization-uk-UA"><img class="action-icon" src="assets/icons/github-dark.svg" alt="">Переклад <span aria-hidden="true">↗</span></a>
+                  <a class="game-link" href="https://store.steampowered.com/app/371970/Barony/"><img class="action-icon" src="assets/icons/steam.png" alt="">Гра у Steam <span aria-hidden="true">↗</span></a>
                 </div>
               </div>
             </article>
@@ -67,8 +87,8 @@
                 <div class="project-meta"><span class="platform">ПК · Steam</span><span class="status">Чернетка перекладу</span></div>
                 <div class="project-stats" aria-label="Статистика перекладу"><span><strong>7 165</strong> рядків</span><span><strong>0%</strong> вичитано</span></div>
                 <div class="project-actions">
-                  <a class="project-link" href="https://github.com/UKA-Localization/Starship-Troopers-Terran-Command-localization-uk-UA">Переклад <span aria-hidden="true">↗</span></a>
-                  <a class="game-link" href="https://store.steampowered.com/app/1202130/Starship_Troopers_Terran_Command/">Гра у Steam <span aria-hidden="true">↗</span></a>
+                  <a class="project-link" href="https://github.com/UKA-Localization/Starship-Troopers-Terran-Command-localization-uk-UA"><img class="action-icon" src="assets/icons/github-dark.svg" alt="">Переклад <span aria-hidden="true">↗</span></a>
+                  <a class="game-link" href="https://store.steampowered.com/app/1202130/Starship_Troopers_Terran_Command/"><img class="action-icon" src="assets/icons/steam.png" alt="">Гра у Steam <span aria-hidden="true">↗</span></a>
                 </div>
               </div>
             </article>
@@ -102,22 +122,13 @@
           </nav>
         </section>
 
-        <section class="support-section" id="support" aria-labelledby="support-title">
-          <h2 id="support-title">Підтримати проєкт</h2>
-          <p>Посилання для підтримки з’являться тут після налаштування цих майданчиків.</p>
-          <div class="support-actions">
-            <button type="button" disabled><span>Patreon</span><small>Незабаром</small></button>
-            <button type="button" disabled><span>Монобанка</span><small>Незабаром</small></button>
-            <button type="button" disabled><span>Donatello</span><small>Незабаром</small></button>
+        <section class="join-section" id="join" aria-labelledby="join-title">
+          <div>
+            <p class="eyebrow">Допомогти без донату</p>
+            <h2 id="join-title">Приєднатись до проєкту</h2>
+            <p>Допомога з локалізаціями не обов’язково потребує грошей. Ви можете вичитувати тексти, перевіряти переклад у грі, повідомляти про помилки або допомагати з технічною частиною.</p>
           </div>
-        </section>
-
-        <section class="social-section" aria-labelledby="social-title">
-          <h2 id="social-title">Ми у мережах</h2>
-          <div class="social-actions">
-            <a class="social-link" href="https://github.com/UKA-Localization"><span class="social-mark" aria-hidden="true">GH</span><span>GitHub</span><span aria-hidden="true">↗</span></a>
-            <button class="social-link" type="button" disabled aria-label="Discord — посилання з’явиться згодом"><span class="social-mark" aria-hidden="true">DC</span><span>Discord</span><small>Незабаром</small></button>
-          </div>
+          <a href="https://github.com/UKA-Localization"><img class="action-icon" src="assets/icons/github-light.svg" alt="">Переглянути проєкти на GitHub <span aria-hidden="true">↗</span></a>
         </section>
       </main>
 
