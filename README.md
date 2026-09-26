@@ -20,8 +20,8 @@ Patreon, Монобанка й Donatello у розділі «Підтримат�
 
 Скріншоти для поточних записів взято з папок `publish/screenshots/` відповідних репозиторіїв [Barony](https://github.com/UKA-Localization/Barony-localization-uk-UA) і [Starship Troopers: Terran Command](https://github.com/UKA-Localization/Starship-Troopers-Terran-Command-localization-uk-UA).
 
-Статистику рядків і вичитки взято з `README.md` цих двох проєктів. Вона оновлюється вручну, коли змінюється стан перекладу. Коли з’явиться запрошення до Discord, замініть вимкнену кнопку в секції «Ми у мережах» на посилання.
+Статистику рядків і вичитки взято з `README.md` цих двох проєктів. Вона оновлюється вручну, коли змінюється стан перекладу. Коли з’являться адреси Discord і Reddit, замініть вимкнені кнопки в секції «Ми у мережах» на посилання.
 
 Обидва справжні проєкти додано до каталогу одним комітом 27.09.2026. Їхні початкові дати оновлення відповідають останньому `pushed_at` відповідних репозиторіїв на час створення сортування. Жанри звірено зі сторінками ігор у Steam: [Barony](https://store.steampowered.com/app/371970/Barony/) і [Starship Troopers: Terran Command](https://store.steampowered.com/app/1202130/Starship_Troopers_Terran_Command/).
 
-Знаки сервісів у `assets/icons/` отримані з офіційних джерел: [GitHub Brand Toolkit](https://brand.github.com/foundations/logo), [Steam](https://store.steampowered.com/), [Discord Brand Guidelines](https://discord.com/branding), [Patreon](https://www.patreon.com/brand), [monobank](https://monobank.ua/) і [Donatello](https://donatello.to/). Це лише позначки сервісів у відповідних кнопках.
+Знаки сервісів у `assets/icons/` отримані з офіційних джерел: [GitHub Brand Toolkit](https://brand.github.com/foundations/logo), [Steam](https://store.steampowered.com/), [Discord Brand Guidelines](https://discord.com/branding), [Reddit Brand](https://redditinc.com/brand), [Patreon](https://www.patreon.com/brand), [monobank](https://monobank.ua/) і [Donatello](https://donatello.to/). Це лише позначки сервісів у відповідних кнопках.
