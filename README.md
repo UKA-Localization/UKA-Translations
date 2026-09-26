@@ -11,6 +11,8 @@
 
 Це статичний сайт: для перегляду локально достатньо відкрити `index.html` у браузері. Залежностей і збірки немає.
 
+Після зміни `styles.css`, `search.js` або `preview.js` збільшіть параметр `v` у відповідному посиланні в `index.html`, щоб GitHub Pages не віддавав відвідувачам попередню кешовану версію файлу.
+
 Скріншоти для поточних записів взято з папок `publish/screenshots/` відповідних репозиторіїв [Barony](https://github.com/UKA-Localization/Barony-localization-uk-UA) і [Starship Troopers: Terran Command](https://github.com/UKA-Localization/Starship-Troopers-Terran-Command-localization-uk-UA).
 
 Статистику рядків і вичитки взято з `README.md` цих двох проєктів. Вона оновлюється вручну, коли змінюється стан перекладу. Коли з’явиться запрошення до Discord, замініть вимкнену кнопку в секції «Ми у мережах» на посилання.
