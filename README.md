@@ -5,7 +5,7 @@
 ## Як додати проєкт
 
 1. Переконайтеся, що репозиторій локалізації публічний і його `README.md` пояснює поточний стан перекладу та спосіб встановлення.
-2. Додайте до `<div id="project-rows">` в `index.html` новий блок `<article class="project-row">` за зразком наявних. Змініть скріншот, назву, жанри, платформу, стан, опис, статистику, посилання на переклад і сторінку гри. Скріншот покладіть у `assets/`.
+2. Додайте до `<div id="project-rows">` в `index.html` новий блок `<article class="project-row">` за зразком наявних. Змініть скріншот, назву, жанри, платформу, версію гри, стан, опис, статистику, посилання на переклад і сторінку гри. Вказуйте версію гри, для якої доступний останній реліз українізатора; після нового релізу оновіть її вручну. Скріншот покладіть у `assets/`.
 3. Заповніть атрибути `data-name` (назва для пошуку), `data-added` (дата внесення до каталогу), `data-updated` (дата останнього оновлення репозиторію локалізації) та `data-status` (`released`, `active`, `draft` або `paused`). Пошук також бере жанри з `.project-genres` і платформу з `.platform`. Дати вкажіть у форматі ISO 8601. Якщо зміниться `data-updated`, оновіть також видиму дату в `<time>`.
 4. Пошук, сортування, лічильник і пагінація оновляться автоматично. За замовчуванням нові записи показуються першими; за однакової дати додавання порядок визначає дата оновлення. Сортування за статусом іде в порядку: `released`, `active`, `draft`, `paused`. На сторінці міститься до п’яти ігор (`PAGE_SIZE` у `search.js`).
 5. Створіть pull request або надішліть зміни в `main`. Після злиття GitHub Pages оновить сторінку.
@@ -19,6 +19,8 @@ Patreon, Монобанка й Donatello у розділі «Підтримат�
 Скріншоти для поточних записів взято з папок `publish/screenshots/` відповідних репозиторіїв [Barony](https://github.com/UKA-Localization/Barony-localization-uk-UA) і [Starship Troopers: Terran Command](https://github.com/UKA-Localization/Starship-Troopers-Terran-Command-localization-uk-UA).
 
 Статистику рядків і вичитки взято з `README.md` цих двох проєктів. Вона оновлюється вручну, коли змінюється стан перекладу. Коли з’являться адреси Discord і Reddit, замініть вимкнені кнопки в секції «Ми у мережах» на посилання.
+
+Версії ігор у картках звірено з останніми опублікованими релізами українізаторів: [Barony 5.0.2-3](https://github.com/UKA-Localization/Barony-localization-uk-UA/releases/tag/5.0.2-3) для гри v5.0.2 та [Starship Troopers: Terran Command 6.5.0-1](https://github.com/UKA-Localization/Starship-Troopers-Terran-Command-localization-uk-UA/releases/tag/6.5.0-1) для гри v6.5.0.
 
 Обидва справжні проєкти додано до каталогу одним комітом 27.09.2026. Їхні початкові дати оновлення відповідають останньому `pushed_at` відповідних репозиторіїв на час створення сортування. Жанри звірено зі сторінками ігор у Steam: [Barony](https://store.steampowered.com/app/371970/Barony/) і [Starship Troopers: Terran Command](https://store.steampowered.com/app/1202130/Starship_Troopers_Terran_Command/).
 

@@ -74,7 +74,7 @@ h3 { min-width: 0; margin: 0; font-size: clamp(19px, 2vw, 23px); line-height: 1.
 .project-genres span { color: #edf3f4; font-weight: 650; }
 .project-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .project-meta time { color: #91a4aa; font-size: 12px; }
-.platform { color: #aebfc3; font-size: 13px; }
+.platform, .game-version { color: #aebfc3; font-size: 13px; }
 .status { display: inline-block; border: 1px solid #896d45; border-radius: 100px; padding: 6px 9px; color: #f4bf65; font-size: 12px; line-height: 1; }
 .project-stats { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 14px; color: #aebfc3; font-size: 12px; }
 .project-stats strong { color: #edf3f4; font-size: 15px; }
