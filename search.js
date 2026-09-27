@@ -9,6 +9,7 @@ const previousPage = document.querySelector('#previous-page');
 const nextPage = document.querySelector('#next-page');
 const pageIndicator = document.querySelector('#page-indicator');
 const catalogTitle = document.querySelector('#catalog-title');
+const page = document.querySelector('.page');
 const nameCollator = new Intl.Collator('uk', { sensitivity: 'base', numeric: true });
 const statusOrder = { released: 0, active: 1, draft: 2, paused: 3 };
 const normalizeSearch = value => value.normalize('NFKC').toLocaleLowerCase('uk');
@@ -90,8 +91,12 @@ function changePage(offset) {
 }
 
 searchInput.addEventListener('input', () => {
+  // Keep the viewport in place when filtering shortens a page near its bottom.
+  const viewportBottom = window.scrollY + window.innerHeight;
+  document.body.style.minHeight = `${viewportBottom}px`;
   currentPage = 1;
   renderProjects();
+  if (page.offsetHeight >= viewportBottom) document.body.style.minHeight = '';
 });
 sortSelect.addEventListener('change', () => {
   currentPage = 1;
