@@ -2,27 +2,35 @@ const PAGE_SIZE = 5;
 const searchInput = document.querySelector('#project-search');
 const sortSelect = document.querySelector('#project-sort');
 const projectList = document.querySelector('#project-rows');
-const rows = [...projectList.querySelectorAll('.project-row')];
-const normalizeSearch = value => value.normalize('NFKC').toLocaleLowerCase('uk');
-const searchText = new Map(rows.map(row => {
-  const platform = row.querySelector('.platform')?.textContent ?? '';
-  return [row, normalizeSearch([
-    row.dataset.name,
-    row.querySelector('.project-genres')?.textContent ?? '',
-    platform,
-    platform.includes('ПК') ? 'PC' : '',
-  ].join(' '))];
-}));
-const originalOrder = new Map(rows.map((row, index) => [row, index]));
-const demoCount = rows.filter(row => row.dataset.demo === 'true').length;
 const resultCount = document.querySelector('#result-count');
 const emptyState = document.querySelector('#empty-state');
 const pagination = document.querySelector('#pagination');
 const previousPage = document.querySelector('#previous-page');
 const nextPage = document.querySelector('#next-page');
 const pageIndicator = document.querySelector('#page-indicator');
+const catalogTitle = document.querySelector('#catalog-title');
 const nameCollator = new Intl.Collator('uk', { sensitivity: 'base', numeric: true });
-const statusOrder = { released: 0, active: 1, draft: 2, paused: 3, demo: 4 };
+const statusOrder = { released: 0, active: 1, draft: 2, paused: 3 };
+const normalizeSearch = value => value.normalize('NFKC').toLocaleLowerCase('uk');
+
+const projects = [...projectList.querySelectorAll('.project-row')].map((row, index) => {
+  const platform = row.querySelector('.platform')?.textContent ?? '';
+  return {
+    row,
+    index,
+    name: row.dataset.name,
+    added: Date.parse(row.dataset.added) || 0,
+    updated: Date.parse(row.dataset.updated) || 0,
+    status: statusOrder[row.dataset.status] ?? 99,
+    searchText: normalizeSearch([
+      row.dataset.name,
+      row.querySelector('.project-genres')?.textContent ?? '',
+      platform,
+      platform.includes('ПК') ? 'PC' : '',
+    ].join(' ')),
+  };
+});
+
 let currentPage = 1;
 
 function projectWord(count) {
@@ -32,56 +40,53 @@ function projectWord(count) {
   return 'проєктів';
 }
 
-function compareDates(a, b, field) {
-  return Date.parse(b.dataset[field] || 0) - Date.parse(a.dataset[field] || 0);
-}
-
 function compareProjects(a, b) {
-  // Demo rows stay after real projects in every mode.
-  const demoDifference = Number(a.dataset.demo === 'true') - Number(b.dataset.demo === 'true');
-  if (demoDifference) return demoDifference;
-
-  let difference = 0;
+  let difference;
   switch (sortSelect.value) {
     case 'updated':
-      difference = compareDates(a, b, 'updated') || compareDates(a, b, 'added');
+      difference = b.updated - a.updated || b.added - a.added;
       break;
     case 'name':
-      difference = nameCollator.compare(a.dataset.name, b.dataset.name);
+      difference = nameCollator.compare(a.name, b.name);
       break;
     case 'status':
-      difference = (statusOrder[a.dataset.status] ?? 99) - (statusOrder[b.dataset.status] ?? 99)
-        || compareDates(a, b, 'updated');
+      difference = a.status - b.status || b.updated - a.updated;
       break;
     default:
-      difference = compareDates(a, b, 'added') || compareDates(a, b, 'updated');
+      difference = b.added - a.added || b.updated - a.updated;
   }
-  return difference || originalOrder.get(a) - originalOrder.get(b);
+  return difference || a.index - b.index;
 }
 
 function renderProjects() {
   const query = normalizeSearch(searchInput.value.trim());
   const terms = query.split(/\s+/).filter(Boolean);
-  const sortedRows = [...rows].sort(compareProjects);
-  projectList.replaceChildren(...sortedRows);
-  const matching = sortedRows.filter(row => terms.every(term => searchText.get(row).includes(term)));
+  const sorted = [...projects].sort(compareProjects);
+  const matching = sorted.filter(project => terms.every(term => project.searchText.includes(term)));
   const totalPages = Math.max(1, Math.ceil(matching.length / PAGE_SIZE));
+
   currentPage = Math.min(currentPage, totalPages);
   const first = (currentPage - 1) * PAGE_SIZE;
-  const visibleRows = new Set(matching.slice(first, first + PAGE_SIZE));
+  const visible = new Set(matching.slice(first, first + PAGE_SIZE));
 
-  for (const row of rows) row.hidden = !visibleRows.has(row);
+  projectList.replaceChildren(...sorted.map(project => project.row));
+  for (const project of projects) project.row.hidden = !visible.has(project);
+
   projectList.hidden = matching.length === 0;
   emptyState.hidden = matching.length !== 0;
   pagination.hidden = totalPages <= 1;
   resultCount.textContent = query
-    ? `${matching.length} із ${rows.length} записів`
-    : demoCount
-      ? `${rows.length - demoCount} ${projectWord(rows.length - demoCount)} · ${demoCount} тестові`
-      : `${rows.length} ${projectWord(rows.length)}`;
+    ? `${matching.length} із ${projects.length} записів`
+    : `${projects.length} ${projectWord(projects.length)}`;
   pageIndicator.textContent = `Сторінка ${currentPage} із ${totalPages}`;
   previousPage.disabled = currentPage === 1;
   nextPage.disabled = currentPage === totalPages;
+}
+
+function changePage(offset) {
+  currentPage += offset;
+  renderProjects();
+  catalogTitle.scrollIntoView({ behavior: 'smooth' });
 }
 
 searchInput.addEventListener('input', () => {
@@ -92,15 +97,7 @@ sortSelect.addEventListener('change', () => {
   currentPage = 1;
   renderProjects();
 });
-previousPage.addEventListener('click', () => {
-  currentPage--;
-  renderProjects();
-  document.querySelector('#catalog-title').scrollIntoView({ behavior: 'smooth' });
-});
-nextPage.addEventListener('click', () => {
-  currentPage++;
-  renderProjects();
-  document.querySelector('#catalog-title').scrollIntoView({ behavior: 'smooth' });
-});
+previousPage.addEventListener('click', () => changePage(-1));
+nextPage.addEventListener('click', () => changePage(1));
 
 renderProjects();

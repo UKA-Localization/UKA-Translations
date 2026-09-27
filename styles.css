@@ -56,7 +56,6 @@ h2 { margin: 0; font-size: 25px; letter-spacing: -.03em; }
 .project-row:hover { background: #22343f; }
 .project-image-link { display: block; width: 100%; border-radius: 7px; cursor: zoom-in; }
 .project-image { display: block; width: 100%; height: auto; aspect-ratio: 43 / 18; border-radius: 7px; background: #101820; }
-.project-demo-image { display: grid; place-items: center; width: 100%; aspect-ratio: 43 / 18; border: 1px dashed #647983; border-radius: 7px; background: linear-gradient(135deg, #293b47, #14212a); color: #aebfc3; font-size: 16px; font-weight: 700; letter-spacing: .15em; }
 .image-preview { width: min(96vw, 1600px); max-width: none; max-height: 94vh; margin: auto; padding: 0; overflow: hidden; border: 1px solid #52646c; border-radius: 12px; background: #111c25; color: #edf3f4; box-shadow: 0 24px 80px #0009; }
 .image-preview::backdrop { background: rgb(3 9 14 / 85%); }
 .preview-panel { padding: 10px; }
@@ -86,7 +85,6 @@ h3 { min-width: 0; margin: 0; font-size: clamp(19px, 2vw, 23px); line-height: 1.
 .project-link:hover { background: #ffcf7d; }
 .game-link { border: 1px solid #647983; color: #dbe6e8; }
 .game-link:hover { border-color: #f4bf65; color: #f4bf65; }
-.demo-action { color: #9eb1b7; font-size: 13px; text-align: center; }
 .empty-state { margin: 0; padding: 23px; color: #b6c6ca; background: #1c2a34; border: 1px solid #344650; border-radius: 12px; }
 .pagination { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 24px; }
 .pagination button { min-height: 38px; border: 1px solid #52646c; border-radius: 7px; padding: 8px 12px; background: #263640; color: #edf3f4; font: inherit; font-size: 13px; cursor: pointer; }
